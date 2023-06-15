@@ -1,0 +1,79 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Segoe Script;
+  background: repeating-linear-gradient(60deg, #000, #111, #000 5px);
+}
+
+div.input-field {
+  background: firebrick;
+  text-align: center;
+  padding: 20px 20px;
+}
+div.wrapper {
+  max-width: 55vw;
+  margin: 5em auto 0 auto;
+}
+input:not([type="checkbox"]) {
+  background: white;
+  padding: 10px;
+  outline: none;
+  border: none;
+  width: 60%;
+  margin-top: 1em;
+  cursor: text;
+  border-radius: 10px;
+}
+
+button {
+  border: none;
+  padding: 5px;
+  text-align: center;
+  cursor: pointer;
+  font-family: Segoe Script;
+  border-radius: 10px;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+  background: green;
+  padding: 10px 20px;
+  position: relative;
+}
+
+li:nth-child(odd) {
+  background: orange;
+}
+
+input[type="checkbox"]:checked + label {
+  text-decoration: line-through;
+}
+.close-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 10px 16px;
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  background: firebrick;
+}
+
+.new {
+  margin-left: 5px;
+}
+
+label,
+.new {
+  user-select: none;
+  cursor: pointer;
+}
