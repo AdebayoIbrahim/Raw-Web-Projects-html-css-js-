@@ -13,11 +13,13 @@
         padding: 0;
       }
       nav {
+        /* background: rgb(94, 60, 60); */
         box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
           0px 4px 5px 0px rgba(0, 0, 0, 0.14),
           0px 1px 10px 0px rgba(0, 0, 0, 0.12);
         position: sticky;
         top: 0;
+        opacity: 0.8;
       }
       header {
         text-align: center;
@@ -30,8 +32,13 @@
       }
       .progress-container {
         width: 100%;
-        height: 3px;
-        background: khaki;
+        height: 6px;
+        background: #4a1751;
+      }
+      #progress-bar {
+        width: 0;
+        height: inherit;
+        background: orange;
       }
       .body_page {
         text-align: center;
@@ -43,12 +50,24 @@
       }
       .grid-message {
         display: grid;
-        padding-top: 3rem;
+        padding-top: 1rem;
         gap: 2em;
         justify-content: center;
         text-align: center;
         align-items: center;
         grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+      }
+
+      .checkout {
+        padding-top: 3rem;
+      }
+      .foot {
+        padding: 0.4em;
+        background: #471515;
+        text-align: center;
+      }
+      footer {
+        padding-top: 2rem;
       }
     </style>
   </head>
@@ -76,52 +95,153 @@
           rerum aperiam fugiat dolorem quae eius eveniet! Doloremque ut
           recusandae corrupti in. Cum iure maxime animi, repellendus quam ullam
           blanditiis assumenda, pariatur sed neque illo, culpa dolores
-          perspiciatis. Ratione saepe et soluta.
+          perspiciatis. Ratione saepe et soluta. Lorem ipsum dolor sit amet
+          consectetur, adipisicing elit. Exercitationem dolores voluptatem ipsa
+          nesciunt tempore, repellendus quisquam blanditiis doloremque
+          consequuntur, est labore minus ullam cumque accusamus facere harum
+          nihil odit? Reprehenderit magnam dolorem hic est. Odio molestiae
+          recusandae ducimus itaque! Suscipit mollitia dolore ratione nulla
+          nihil. A blanditiis, unde dolorum animi minus voluptatibus consequatur
+          reprehenderit beatae fuga possimus, ipsa autem natus perferendis id
+          maiores accusamus? Natus magni nobis sint rerum aperiam fugiat dolorem
+          quae eius eveniet! Doloremque ut recusandae corrupti in. Cum iure
+          maxime animi, repellendus quam ullam blanditiis assumenda, pariatur
+          sed neque illo, culpa dolores perspiciatis. Ratione saepe et soluta.
         </p>
         <div class="article">
           <h1>News For The Day</h1>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero
-            recusandae, exercitationem voluptatem nihil consequuntur quasi vero
-            aut reiciendis a iure officia velit voluptatum maiores quidem
-            accusamus natus, amet hic, soluta molestias veniam. Molestiae, quo
-            perspiciatis provident ea, harum aliquam, aspernatur laborum
-            adipisci velit aut eos tempora totam! Ex animi in, quasi ipsam
-            corporis ipsa excepturi, incidunt voluptas odit ullam vel.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure,
+            debitis quam. Dolorem deserunt nihil impedit, expedita similique
+            voluptas recusandae eos consequatur, accusantium adipisci soluta
+            blanditiis dolores tenetur officia laborum rerum officiis, ipsa
+            harum obcaecati hic. Aut, voluptatum! Dignissimos hic sequi quae
+            maxime deserunt nihil voluptate culpa magni soluta est quisquam
+            maiores cumque labore repellat fugiat nam doloribus, non doloremque
+            sint natus quam commodi ab, quas delectus! Repellendus, quia
+            necessitatibus et velit voluptatum ab voluptas assumenda sapiente
+            non alias laborum doloribus accusamus soluta maiores earum ex esse
+            id ducimus vero. Repellat ducimus aperiam esse ad molestias
+            distinctio mollitia. Earum, natus ullam.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure,
+            debitis quam. Dolorem deserunt nihil impedit, expedita similique
+            voluptas recusandae eos consequatur, accusantium adipisci soluta
+            blanditiis dolores tenetur officia laborum rerum officiis, ipsa
+            harum obcaecati hic. Aut, voluptatum! Dignissimos hic sequi quae
+            maxime deserunt nihil voluptate culpa magni soluta est quisquam
+            maiores cumque labore repellat fugiat nam doloribus, non doloremque
+            sint natus quam commodi ab, quas delectus! Repellendus, quia
+            necessitatibus et velit voluptatum ab voluptas assumenda sapiente
+            non alias laborum doloribus accusamus soluta maiores earum ex esse
+            id ducimus vero. Repellat ducimus aperiam esse ad molestias
+            distinctio mollitia. Earum, natus ullam.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure,
+            debitis quam. Dolorem deserunt nihil impedit, expedita similique
+            voluptas recusandae eos consequatur, accusantium adipisci soluta
+            blanditiis dolores tenetur officia laborum rerum officiis, ipsa
+            harum obcaecati hic. Aut, voluptatum! Dignissimos hic sequi quae
+            maxime deserunt nihil voluptate culpa magni soluta est quisquam
+            maiores cumque labore repellat fugiat nam doloribus, non doloremque
+            sint natus quam commodi ab, quas delectus! Repellendus, quia
+            necessitatibus et velit voluptatum ab voluptas assumenda sapiente
+            non alias laborum doloribus accusamus soluta maiores earum ex esse
+            id ducimus vero. Repellat ducimus aperiam esse ad molestias
+            distinctio mollitia. Earum, natus ullam.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure,
+            debitis quam. Dolorem deserunt nihil impedit, expedita similique
+            voluptas recusandae eos consequatur, accusantium adipisci soluta
+            blanditiis dolores tenetur officia laborum rerum officiis, ipsa
+            harum obcaecati hic. Aut, voluptatum! Dignissimos hic sequi quae
+            maxime deserunt nihil voluptate culpa magni soluta est quisquam
+            maiores cumque labore repellat fugiat nam doloribus, non doloremque
+            sint natus quam commodi ab, quas delectus! Repellendus, quia
+            necessitatibus et velit voluptatum ab voluptas assumenda sapiente
+            non alias laborum doloribus accusamus soluta maiores earum ex esse
+            id ducimus vero. Repellat ducimus aperiam esse ad molestias
+            distinctio mollitia. Earum, natus ullam.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure,
+            debitis quam. Dolorem deserunt nihil impedit, expedita similique
+            voluptas recusandae eos consequatur, accusantium adipisci soluta
+            blanditiis dolores tenetur officia laborum rerum officiis, ipsa
+            harum obcaecati hic. Aut, voluptatum! Dignissimos hic sequi quae
+            maxime deserunt nihil voluptate culpa magni soluta est quisquam
+            maiores cumque labore repellat fugiat nam doloribus, non doloremque
+            sint natus quam commodi ab, quas delectus! Repellendus, quia
+            necessitatibus et velit voluptatum ab voluptas assumenda sapiente
+            non alias laborum doloribus accusamus soluta maiores earum ex esse
+            id ducimus vero. Repellat ducimus aperiam esse ad molestias
+            distinctio mollitia. Earum, natus ullam.
           </p>
         </div>
-        <div class="grid-message">
-          <div class="columns">
-            <h4>Papramount Layers</h4>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
-              porro obcaecati consectetur, doloribus dignissimos autem dolores
-              aliquam quasi mollitia quae nulla rem deleniti eveniet cumque, non
-              unde sed? A, recusandae excepturi. Voluptatum illo quod ipsum.
-            </p>
-          </div>
-          <div class="columns">
-            <h4>Papramount Layers</h4>
-
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
-              porro obcaecati consectetur, doloribus dignissimos autem dolores
-              aliquam quasi mollitia quae nulla rem deleniti eveniet cumque, non
-              unde sed? A, recusandae excepturi. Voluptatum illo quod ipsum.
-            </p>
-          </div>
-          <div class="columns">
-            <h4>Papramount Layers</h4>
-
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
-              porro obcaecati consectetur, doloribus dignissimos autem dolores
-              aliquam quasi mollitia quae nulla rem deleniti eveniet cumque, non
-              unde sed? A, recusandae excepturi. Voluptatum illo quod ipsum.
-            </p>
+        <div class="checkout">
+          <h1>Check This Out</h1>
+          <div class="grid-message">
+            <div class="columns">
+              <h4>Papramount Layers</h4>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
+                porro obcaecati consectetur, doloribus dignissimos autem dolores
+                aliquam quasi mollitia quae nulla rem deleniti eveniet cumque,
+                non unde sed? A, recusandae excepturi. Voluptatum illo quod
+                ipsum.
+              </p>
+            </div>
+            <div class="columns">
+              <h4>Papramount Layers</h4>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
+                porro obcaecati consectetur, doloribus dignissimos autem dolores
+                aliquam quasi mollitia quae nulla rem deleniti eveniet cumque,
+                non unde sed? A, recusandae excepturi. Voluptatum illo quod
+                ipsum.
+              </p>
+            </div>
+            <div class="columns">
+              <h4>Papramount Layers</h4>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod
+                porro obcaecati consectetur, doloribus dignissimos autem dolores
+                aliquam quasi mollitia quae nulla rem deleniti eveniet cumque,
+                non unde sed? A, recusandae excepturi. Voluptatum illo quod
+                ipsum.
+              </p>
+            </div>
           </div>
         </div>
       </div>
+      <footer>
+        <div class="foot">
+          <h2>Copyright&copy;<span class="span"></span></h2>
+        </div>
+      </footer>
     </div>
+
+    <script>
+      //get copy right year
+      var currDate = new Date().getFullYear();
+      var span = document.querySelector(".span");
+      span.innerHTML = currDate;
+
+      //tracker scrolling function
+      window.addEventListener("scroll", () => {
+        const tracker = document.querySelector("#progress-bar");
+        const windowScroll =
+          document.body.scrollTop || document.documentElement.scrollTop;
+        let scrollHeight = Number(document.documentElement.scrollHeight);
+        let clientHeight = Number(document.documentElement.clientHeight);
+        const actualHeight = scrollHeight - clientHeight;
+        const scrollTracker = Number((windowScroll / actualHeight) * 100);
+        //set value to the progress-bar width
+        tracker.style.width = `${scrollTracker}%`;
+      });
+    </script>
   </body>
 </html>
