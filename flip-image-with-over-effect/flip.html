@@ -20,13 +20,20 @@
         border: 2px solid khaki;
         margin-top: 1em;
         cursor: pointer;
+        border-radius: 1em;
+        perspective: 1000px;
+        box-shadow: 0px 2px 8px -1px red, 0px 4px 5px 0px yellow,
+          0px 1px 10px 0px black;
       }
       .flib_box {
         position: relative;
         transform-style: preserve-3d;
-        transition: transform 300ms ease-in-out;
+        transition: transform 500ms ease-in-out;
         width: 100%;
         height: 100%;
+      }
+      .container:hover .flib_box {
+        transform: rotateY(180deg);
       }
       .inner-box,
       .outer-box {
@@ -35,9 +42,11 @@
         backface-visibility: hidden;
         position: absolute;
         text-align: center;
+        border-radius: 1em;
       }
       .outer-box {
         background: purple;
+        transform: rotateY(180deg);
         color: pink;
       }
       .outer-box > .text {
@@ -45,7 +54,9 @@
       }
       img {
         width: 100%;
+        object-fit: cover;
         height: 100%;
+        border-radius: 1em;
       }
       .header {
         text-align: center;
