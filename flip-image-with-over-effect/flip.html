@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flip Card</title>
+    <style>
+      body {
+        display: grid;
+        justify-content: center;
+        align-items: center;
+        gap: 0;
+        background: linear-gradient(to right, red, orange);
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Poppins, Verdana, sans-serif;
+      }
+      .container {
+        width: 400px;
+        aspect-ratio: 1 / 1;
+        border: 2px solid khaki;
+        margin-top: 1em;
+        cursor: pointer;
+      }
+      .flib_box {
+        position: relative;
+        transform-style: preserve-3d;
+        transition: transform 300ms ease-in-out;
+        width: 100%;
+        height: 100%;
+      }
+      .inner-box,
+      .outer-box {
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        position: absolute;
+        text-align: center;
+      }
+      .outer-box {
+        background: purple;
+        color: pink;
+      }
+      .outer-box > .text {
+        margin-top: 40%;
+      }
+      img {
+        width: 100%;
+        height: 100%;
+      }
+      .header {
+        text-align: center;
+        color: purple;
+        font-weight: bold;
+        margin-top: 10px;
+        padding-top: 6rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">Hover On The Image Below</div>
+    <div class="container">
+      <div class="flib_box">
+        <div class="inner-box">
+          <img src="./coding_woman.jpg" alt="image" />
+        </div>
+        <div class="outer-box">
+          <div class="text">
+            <h3>Software Engineer</h3>
+            <p>Coding For Passion</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
