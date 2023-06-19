@@ -4,6 +4,48 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SlideShow</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        background: linear-gradient(to right, rgb(17, 17, 15), rgb(52, 60, 65));
+      }
+      .container-images {
+        margin: 2em auto;
+        max-width: 1000px;
+      }
+      .image_slder {
+        display: none;
+      }
+      .image_slder > img {
+        width: 100%;
+        height: 500px;
+      }
+    </style>
   </head>
-  <body></body>
+  <body>
+    <div class="container-images">
+      <div class="image_slder"><img src="./images/1973389.jpg" alt="" /></div>
+      <div class="image_slder"><img src="./images/1973394.jpg" alt="" /></div>
+      <div class="image_slder"><img src="./images/4000637.png" alt="" /></div>
+    </div>
+
+    <script>
+      let slideCount = 0;
+
+      const cont = document.querySelectorAll(".image_slder");
+      for (i = 0; i < cont.length; i++) {
+        cont[i].style.display = "none";
+      }
+      function countFunction() {
+        slideCount++;
+        if (slideCount > cont.length) {
+          slideCount = 0;
+        }
+        cont[slideCount - 1].style.display = "block";
+      }
+      setInterval(countFunction, 2000);
+    </script>
+  </body>
 </html>
