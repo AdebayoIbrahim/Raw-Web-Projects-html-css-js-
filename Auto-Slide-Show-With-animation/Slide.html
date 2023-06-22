@@ -33,6 +33,23 @@
           opacity: 1;
         }
       }
+      .dots-track {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin-top: 20px;
+        gap: 5px;
+      }
+      .dots-track > div {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: #ffffff33;
+      }
+      .current {
+        background: #ffffffcc !important;
+      }
     </style>
   </head>
   <body>
@@ -46,6 +63,11 @@
       <div class="image_slder animate">
         <img src="./images/4000637.png" alt="" />
       </div>
+      <div class="dots-track">
+        <div class="dots"></div>
+        <div class="dots"></div>
+        <div class="dots"></div>
+      </div>
     </div>
 
     <script>
@@ -53,13 +75,20 @@
       countFunction();
       function countFunction() {
         const cont = document.querySelectorAll(".image_slder");
+        const dots = document.querySelectorAll(".dots");
         for (i = 0; i < cont.length; i++) {
           cont[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+          if (dots[i].classList.contains("current")) {
+            dots[i].classList.remove("current");
+          }
         }
         slideCount++;
         slideCount > cont.length && (slideCount = 1);
 
         cont[slideCount - 1].style.display = "block";
+        dots[slideCount - 1].classList.add("current");
       }
       setInterval(countFunction, 5000);
     </script>
