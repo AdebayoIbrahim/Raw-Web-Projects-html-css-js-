@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SlideShow</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        background: linear-gradient(to right, rgb(17, 17, 15), rgb(52, 60, 65));
+      }
+      .container-images {
+        margin: 2em auto;
+        max-width: 1000px;
+        position: relative;
+      }
+      .image_slder {
+        display: none;
+      }
+      .image_slder > img {
+        width: 100%;
+        /* height: 500px; */
+      }
+      .animate {
+        animation: animate 1s ease-in-out;
+      }
+      @keyframes animate {
+        from {
+          opacity: 0.3;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      .dots-track {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin-top: -20px;
+        gap: 5px;
+      }
+      .dots-track > div {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: #ffffff33;
+      }
+
+      .current {
+        background: #ffffffcc !important;
+        animation: opacity 1s ease-in-out;
+      }
+      @keyframes opacity {
+        from {
+          opacity: 0.5;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      .next {
+        color: white;
+        position: absolute;
+        top: 50%;
+        right: 20px;
+        padding: 10px;
+        cursor: pointer;
+        background: transparent;
+        border-radius: 0.3rem;
+        top: 40%;
+        font-size: 1.5rem;
+        transition: background 500ms ease;
+      }
+      .previous {
+        color: white;
+        position: absolute;
+        top: 50%;
+        left: 20px;
+        padding: 10px;
+        cursor: pointer;
+        background: transparent;
+        border-radius: 0.3rem;
+        top: 40%;
+        font-size: 1.5rem;
+        transition: background 500ms ease;
+      }
+      .next:hover {
+        background: rgba(68, 63, 63, 0.7);
+      }
+      .previous:hover {
+        background: rgba(68, 63, 63, 0.7);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container-images">
+      <div class="image_slder animate">
+        <img src="./images/1973389.jpg" alt="" />
+      </div>
+      <div class="image_slder animate">
+        <img src="./images/1973394.jpg" alt="" />
+      </div>
+      <div class="image_slder animate">
+        <img src="./images/4000637.png" alt="" />
+      </div>
+      <div class="previous">&#10094;</div>
+      <div class="next">&#10095;</div>
+    </div>
+    <div class="dots-track">
+      <div class="dots"></div>
+      <div class="dots"></div>
+      <div class="dots"></div>
+    </div>
+    <script>
+      let slideCount = 0;
+      countFunction();
+      const cont = document.querySelectorAll(".image_slder");
+      function countFunction() {
+        const cont = document.querySelectorAll(".image_slder");
+        const dots = document.querySelectorAll(".dots");
+        for (i = 0; i < cont.length; i++) {
+          cont[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+          if (dots[i].classList.contains("current")) {
+            dots[i].classList.remove("current");
+          }
+        }
+
+        cont[slideCount].style.display = "block";
+        dots[slideCount].classList.add("current");
+      }
+
+      setInterval(nextSlide, 5000);
+    </script>
+  </body>
+</html>
