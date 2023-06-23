@@ -73,6 +73,7 @@
         top: 40%;
         font-size: 1.5rem;
         transition: background 500ms ease;
+        user-select: none;
       }
       .previous {
         color: white;
@@ -86,6 +87,7 @@
         top: 40%;
         font-size: 1.5rem;
         transition: background 500ms ease;
+        user-select: none;
       }
       .next:hover {
         background: rgba(68, 63, 63, 0.7);
@@ -136,11 +138,16 @@
         dots[slideCount].classList.add("current");
       }
       next.addEventListener("click", nextSlide);
-      // prev.addEventListener("click", prevSlide);
+      prev.addEventListener("click", prevSlide);
 
       function nextSlide() {
         slideCount++;
         slideCount >= cont.length && (slideCount = 0);
+        countFunction();
+      }
+      function prevSlide() {
+        slideCount--;
+        slideCount < 0 && (slideCount = cont.length - 1);
         countFunction();
       }
       setInterval(nextSlide, 5000);
