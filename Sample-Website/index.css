@@ -135,3 +135,21 @@ header ul li {
   padding-block: 1em;
   font-size: 20px;
 }
+.btn-group {
+  display: flex;
+  gap: 2rem;
+}
+.btn-group button {
+  text-align: center;
+  padding: 0.5rem 2rem;
+  font-family: Source Sans Pro, Poppins, verdana;
+  border: 1px solid white;
+  color: white;
+  background: transparent;
+  cursor: pointer;
+  font-size: 0.9em;
+}
+.btn-group button:hover {
+  background: white;
+  color: black;
+}
