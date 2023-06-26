@@ -121,11 +121,23 @@ header ul li {
 }
 .hero-text {
   position: absolute;
-  top: 40%;
+  top: 35%;
   color: white;
   left: 5%;
   padding-left: 30px;
+  animation: slidein 1s ease-out;
   /* transform: translate(-20%, -20%); */
+}
+
+@keyframes slidein {
+  from {
+    transform: translateX(400px);
+    opacity: 0.3;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 .header-text h1 {
   font-size: 2em;
