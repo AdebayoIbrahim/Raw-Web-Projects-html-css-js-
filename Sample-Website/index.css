@@ -32,7 +32,9 @@ header ul li {
 }
 .hero_section {
   width: 100%;
-  height: 80vh;
+  height: 85vh;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 .container-images {
   position: relative;
@@ -63,7 +65,7 @@ header ul li {
   justify-content: center;
   align-items: center;
   text-align: center;
-  margin-top: -20px;
+  margin-top: -50px;
   gap: 5px;
 }
 .dots-track > div {
