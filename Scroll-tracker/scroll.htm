@@ -70,6 +70,17 @@
       footer {
         padding-top: 2rem;
       }
+      .fadein {
+        animation: fade 5s ease;
+      }
+      @keyframes fade {
+        from {
+          opacity: 0.3;
+        }
+        to {
+          opacity: 1;
+        }
+      }
     </style>
   </head>
   <body>
@@ -234,15 +245,27 @@
       //tracker scrolling function
       window.addEventListener("scroll", () => {
         const tracker = document.querySelector("#progress-bar");
-        const windowScroll =
-          document.body.scrollTop || document.documentElement.scrollTop;
+        const windowScroll = document.documentElement.scrollTop;
         let scrollHeight = Number(document.documentElement.scrollHeight);
         let clientHeight = Number(document.documentElement.clientHeight);
         const actualHeight = scrollHeight - clientHeight;
         const scrollTracker = Number((windowScroll / actualHeight) * 100);
         //set value to the progress-bar width
         tracker.style.width = `${scrollTracker}%`;
+        // fadeAnim();
       });
+      //animating onscroll
+      // const getDiv = document.querySelector(".grid-message");
+      // const hebt = getDiv.getBoundingClientRect();
+      // const hebtop = hebt.top;
+      // const hebbot = hebt.bottom;
+      // function fadeAnim() {
+      //   // console.log("scrolled");
+      //   const scrollPos = window.scrollY;
+      //   if (scrollPos > hebtop && scrollPos < hebbot)
+      //     getDiv.classList.add("fadein");
+      //   else getDiv.classList.remove("fadein");
+      // }
     </script>
   </body>
 </html>

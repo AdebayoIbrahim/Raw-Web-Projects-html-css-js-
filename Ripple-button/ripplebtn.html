@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ripple</title>
+    <style>
+      body {
+        background: black;
+      }
+      div {
+        display: flex;
+        justify-content: center;
+        margin-top: 10em;
+      }
+      button {
+        display: inline-block;
+        padding: 1rem 3rem;
+        background: rgb(25, 175, 212);
+        color: rgb(168, 11, 11);
+        border: none;
+        border-radius: 2em;
+        cursor: pointer;
+        font-family: Poppins;
+        font-weight: bold;
+        position: relative;
+        font-size: 1rem;
+        overflow: hidden;
+      }
+      span {
+        position: absolute;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        background: white;
+        animation: ripple 800ms ease-in-out;
+        pointer-events: none;
+      }
+      @keyframes ripple {
+        from {
+          width: 0;
+          height: 0;
+          opacity: 0.3;
+        }
+        to {
+          width: 500px;
+          height: 500px;
+          opacity: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <button id="ripple">Ripple</button>
+    </div>
+    <script>
+      const btn = document.getElementById("ripple");
+      btn.addEventListener("click", (e) => {
+        let top = e.clientY - e.target.offsetTop;
+        let left = e.clientX - e.target.offsetLeft;
+        let ripple = document.createElement("span");
+        ripple.style.left = `${left}px`;
+        ripple.style.top = `${top}px`;
+
+        btn.appendChild(ripple);
+        setTimeout(() => {
+          ripple.remove();
+        }, 800);
+      });
+    </script>
+  </body>
+</html>
