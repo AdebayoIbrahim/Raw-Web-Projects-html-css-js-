@@ -8,6 +8,7 @@
   <style>
     body {
       background: #202142;
+      font-family: Fira Code;
     }
     h1 {
       color: #ff6a95;
@@ -18,10 +19,20 @@
 
     <script>
       const clockShow = document.getElementById("clock");
+      function Clock() {
+        let hour = new Date().getHours();
+        const minute = new Date().getMinutes();
+        const seconds = new Date().getSeconds();
+        hour = hour > 12 ? (hour = `0${hour - 12}`) : hour;
+        let amorpm = hour > 12 ? "am" : "pm";
+        document.getElementById(
+          "clock"
+        ).innerHTML = `${hour}:${minute}:${seconds}${amorpm}`;
+      }
 
-      const hour = new Date().getHours();
-      const minute = new Date().getMinutes();
-      const seconds = new Date().getSeconds();
+      setInterval(() => {
+        Clock();
+      }, 1000);
     </script>
   </body>
 </html>
