@@ -21,9 +21,11 @@
       const clockShow = document.getElementById("clock");
       function Clock() {
         let hour = new Date().getHours();
-        const minute = new Date().getMinutes();
-        const seconds = new Date().getSeconds();
+        let minute = new Date().getMinutes();
+        let seconds = new Date().getSeconds();
         hour = hour > 12 ? (hour = `0${hour - 12}`) : hour;
+        minute = minute < 10 ? (minute = `0${minute}`) : minute;
+        seconds = seconds < 10 ? (seconds = `0${seconds}`) : seconds;
         let amorpm = hour > 12 ? "am" : "pm";
         document.getElementById(
           "clock"
