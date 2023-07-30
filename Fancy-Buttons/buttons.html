@@ -7,21 +7,29 @@
     <style>
       body {
         background: purple;
+        font-family: Source Sans Pro;
       }
       .container {
-        margin: 0 auto;
+        margin: 20% auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
       }
       .slide-container {
         position: relative;
-        width: 50px;
+        width: 60px;
         height: 30px;
-        background: orangered;
+        margin-top: 5px;
       }
       label {
         position: absolute;
+        left: 0;
         width: 100%;
         height: 100%;
         cursor: pointer;
+        background: rgb(156, 154, 154);
+        border-radius: 35px;
+        transition: background 400ms ease-in-out;
       }
       input {
         appearance: none;
@@ -32,23 +40,36 @@
         width: 25px;
         height: 25px;
         border-radius: 50%;
-        top: 2px;
-        bottom: 0;
-        left: 1px;
-        transition: transform 300ms ease-in-out;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 4px;
+        transition: transform 400ms ease-in-out;
         pointer-events: none;
       }
-      input:checked + #slider {
-        transform: translateX(20px);
+
+      input:checked ~ label {
+        background: #0d70aa;
+      }
+      input:checked ~ #slider {
+        transform: translate(calc(100% + 3px), -50%);
+      }
+
+      span.tg {
+        color: aqua;
+        font-size: 20px;
+        margin-left: -20px;
       }
     </style>
   </head>
   <body>
     <div class="container">
-      <div class="slide-container">
-        <label for="slide"></label>
-        <input type="checkbox" id="slide" />
-        <span id="slider"></span>
+      <div class="toggle-switch">
+        <span class="tg">Toggle On/Off</span>
+        <div class="slide-container" id="fl">
+          <input type="checkbox" id="slide" />
+          <label for="slide"></label>
+          <span id="slider"></span>
+        </div>
       </div>
     </div>
   </body>
