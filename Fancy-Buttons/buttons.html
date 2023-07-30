@@ -12,6 +12,7 @@
       .container {
         margin: 20% auto;
         display: flex;
+        gap: 1.8em;
         justify-content: center;
         align-items: center;
       }
@@ -57,7 +58,40 @@
       span.tg {
         color: aqua;
         font-size: 20px;
-        margin-left: -20px;
+        text-align: center;
+        /* margin-left: -20px; */
+      }
+
+      /* //hover buttons */
+      button {
+        all: unset;
+        display: inline-block;
+        background: orange;
+        padding: 0.5em 1.8em;
+        border-radius: 8px;
+        cursor: pointer;
+        position: relative;
+      }
+      button::before {
+        position: absolute;
+        left: 0;
+        top: 0;
+        content: "";
+        border-radius: inherit;
+        width: 0%;
+        height: 100%;
+        background: #e03f3f;
+        opacity: 0.4;
+        transition: width 400ms ease-in-out;
+      }
+      button:hover::before {
+        width: 100%;
+      }
+      .hov {
+        display: block;
+        color: aqua;
+        font-size: 20px;
+        text-align: center;
       }
     </style>
   </head>
@@ -70,6 +104,10 @@
           <label for="slide"></label>
           <span id="slider"></span>
         </div>
+      </div>
+      <div class="hover-btn-1">
+        <span class="hov">Hover1</span>
+        <button>Hover Me</button>
       </div>
     </div>
   </body>
