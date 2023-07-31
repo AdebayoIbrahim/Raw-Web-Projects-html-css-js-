@@ -71,6 +71,7 @@
         border-radius: 8px;
         cursor: pointer;
         position: relative;
+        box-shadow: 0 0 0.5em magenta;
       }
       .hover-btn-1 > button::before {
         position: absolute;
@@ -109,6 +110,22 @@
       .hover-btn-2 button:hover::before {
         height: 100%;
       }
+      /*btn-3*/
+      .hover-btn-3 button::before {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        content: "";
+        border-radius: inherit;
+        width: 0%;
+        height: 100%;
+        background: #e03f3f;
+        opacity: 0.4;
+        transition: width 400ms ease-in-out;
+      }
+      .hover-btn-3 button:hover::before {
+        width: 100%;
+      }
     </style>
   </head>
   <body>
@@ -127,6 +144,10 @@
       </div>
       <div class="hover-btn-2">
         <span class="hov">Hover2</span>
+        <button>Hover Me</button>
+      </div>
+      <div class="hover-btn-3">
+        <span class="hov">Hover3</span>
         <button>Hover Me</button>
       </div>
     </div>
