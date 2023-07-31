@@ -72,7 +72,7 @@
         cursor: pointer;
         position: relative;
       }
-      button::before {
+      .hover-btn-1 > button::before {
         position: absolute;
         left: 0;
         top: 0;
@@ -84,7 +84,7 @@
         opacity: 0.4;
         transition: width 400ms ease-in-out;
       }
-      button:hover::before {
+      .hover-btn-1 > button:hover::before {
         width: 100%;
       }
       .hov {
@@ -92,6 +92,22 @@
         color: aqua;
         font-size: 20px;
         text-align: center;
+      }
+      /* //btn2 */
+      .hover-btn-2 button::before {
+        position: absolute;
+        left: 0;
+        top: 0;
+        content: "";
+        border-radius: inherit;
+        width: 100%;
+        height: 0%;
+        background: #e03f3f;
+        opacity: 0.4;
+        transition: height 400ms ease-in-out;
+      }
+      .hover-btn-2 button:hover::before {
+        height: 100%;
       }
     </style>
   </head>
@@ -107,6 +123,10 @@
       </div>
       <div class="hover-btn-1">
         <span class="hov">Hover1</span>
+        <button>Hover Me</button>
+      </div>
+      <div class="hover-btn-2">
+        <span class="hov">Hover2</span>
         <button>Hover Me</button>
       </div>
     </div>
