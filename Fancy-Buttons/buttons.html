@@ -12,6 +12,7 @@
       .container {
         margin: 20% auto;
         display: flex;
+        flex-wrap: wrap;
         gap: 1.8em;
         justify-content: center;
         align-items: center;
@@ -142,6 +143,43 @@
       .hover-btn-4 button:hover::before {
         height: 100%;
       }
+      /* btn-5 */
+      .hover-btn-5 > button {
+        width: 120.4px;
+        height: 36px;
+        padding: 0;
+        text-align: center;
+        line-height: 35px;
+        /* perspective: 230px; */
+      }
+      .hover-btn-5 > button span {
+        display: block;
+        position: absolute;
+        background: orange;
+        width: inherit;
+        height: inherit;
+        text-align: center;
+        border-radius: 8px;
+        cursor: pointer;
+        line-height: 35px;
+        margin: 0;
+        top: 0;
+        box-shadow: 0 0 0.5em magenta;
+        transform-origin: 50% 50% -18px;
+        transition: all 300ms ease-in-out;
+      }
+      .hover-btn-5 > button span:nth-child(1) {
+        transform: rotateX(90deg);
+      }
+      .hover-btn-5 > button span:nth-child(2) {
+        transform: rotateX(0deg);
+      }
+      .hover-btn-5 > button:hover span:nth-child(1) {
+        transform: rotateX(0deg);
+      }
+      .hover-btn-5 > button:hover span:nth-child(2) {
+        transform: rotateX(-90deg);
+      }
     </style>
   </head>
   <body>
@@ -169,6 +207,10 @@
       <div class="hover-btn-4">
         <span class="hov">Hover4</span>
         <button>Hover Me</button>
+      </div>
+      <div class="hover-btn-5">
+        <span class="hov">Hover4</span>
+        <button><span>Hover Me</span><span>Nice</span></button>
       </div>
     </div>
   </body>
