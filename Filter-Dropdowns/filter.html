@@ -5,8 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dropdown-search</title>
     <style>
+      body {
+        font-family: Poppins;
+      }
       .container {
-        margin: 20% 30%;
+        margin: 2em 30%;
       }
       input {
         all: unset;
@@ -14,12 +17,39 @@
         border-radius: 10px;
         border: 2px solid green;
       }
+      .filter-box {
+        border: 2px solid green;
+        border-radius: 10px;
+        min-width: 260px;
+      }
+      li {
+        list-style: none;
+        text-align: center;
+        width: 100%;
+        cursor: pointer;
+
+        margin-block: 6px;
+        padding-block: 10px;
+      }
+      li:hover {
+        background-color: rgb(199, 202, 204);
+      }
     </style>
   </head>
   <body>
     <div class="container">
       <div class="dropdowns">
         <input type="text" name="search" id="serach" placeholder="Search.." />
+        <div class="filter-box">
+          <li>Lenovo</li>
+          <li>Helwett</li>
+          <li>Tecno</li>
+          <li>Infinix</li>
+          <li>Toshiba</li>
+          <li>Itel</li>
+          <li>Itel</li>
+          <li>Oraimo</li>
+        </div>
       </div>
     </div>
   </body>
