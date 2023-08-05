@@ -7,6 +7,7 @@
     <style>
       body {
         font-family: Poppins;
+        background: #423a3a;
       }
       .container {
         margin: 2em 30%;
@@ -17,22 +18,27 @@
         border-radius: 10px;
         border: 2px solid green;
       }
+      .dropdowns {
+        width: 300px;
+        position: relative;
+      }
       .filter-box {
         border: 2px solid green;
         border-radius: 10px;
-        min-width: 260px;
+        max-width: 300px;
       }
       li {
         list-style: none;
         text-align: center;
         width: 100%;
         cursor: pointer;
-
         margin-block: 6px;
+        color: white;
         padding-block: 10px;
       }
       li:hover {
         background-color: rgb(199, 202, 204);
+        color: black;
       }
     </style>
   </head>
@@ -52,5 +58,23 @@
         </div>
       </div>
     </div>
+
+    <script>
+      const input = document.querySelector("input");
+      const lists = document.querySelectorAll("li");
+
+      input.addEventListener("keyup", (e) => {
+        const value = e.target.value;
+        const newValue = value.toUpperCase();
+        lists.forEach((list) => {
+          const filter = list.textContent.toUpperCase();
+          if (filter.indexOf(newValue) > -1) {
+            list.style.display = "block";
+          } else {
+            list.style.display = "none";
+          }
+        });
+      });
+    </script>
   </body>
 </html>
