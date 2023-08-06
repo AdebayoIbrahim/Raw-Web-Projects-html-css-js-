@@ -5,12 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Overlay</title>
     <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        user-select: none;
+      }
       body {
         background: black;
         color: aqua;
-        font-family: "Source Sans Pro";
-        margin: 0;
-        padding: 0;
+        font-family: "Source Sans Pro", Poppins, Arial;
       }
       .container {
         display: flex;
@@ -18,7 +22,8 @@
         flex-wrap: wrap;
         align-items: center;
         gap: 2em;
-        margin-top: 20px;
+        min-height: 88vh;
+        /* margin-top: 50px; */
       }
       h1 {
         text-align: center;
@@ -82,9 +87,25 @@
         width: 100%;
         height: 100%;
       }
+      nav {
+        background: transparent;
+        box-shadow: 0 0 0.35em aqua;
+        padding: 1em;
+        width: 100%;
+        z-index: 100;
+        text-align: center;
+      }
+      nav .header {
+        font-weight: 500;
+        font-size: 36px;
+        color: rgb(20, 231, 238);
+      }
     </style>
   </head>
   <body>
+    <nav>
+      <div class="header">Hover The Below Images</div>
+    </nav>
     <div class="container">
       <div class="overlays">
         <h1>Overlay 1</h1>
