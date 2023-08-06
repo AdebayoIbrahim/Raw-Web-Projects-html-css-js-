@@ -57,6 +57,12 @@
         width: 100%;
         height: 0%;
       }
+      :is(.overlays:nth-child(4) > .overlay > .text) {
+        left: 0;
+        top: 0;
+        width: 0%;
+        height: 100%;
+      }
       :is(.overlays:nth-child(1):hover > .overlay > .text) {
         height: 100%;
       }
@@ -65,6 +71,9 @@
       }
       :is(.overlays:nth-child(3):hover > .overlay > .text) {
         height: 100%;
+      }
+      :is(.overlays:nth-child(4):hover > .overlay > .text) {
+        width: 100%;
       }
       .text h1 {
         line-height: 18rem;
@@ -97,6 +106,15 @@
       </div>
       <div class="overlays">
         <h1>Overlay 3</h1>
+        <div class="overlay">
+          <img src="./game.jpg" alt="image" />
+          <div class="text scd">
+            <h1>Gamers!</h1>
+          </div>
+        </div>
+      </div>
+      <div class="overlays">
+        <h1>Overlay 4</h1>
         <div class="overlay">
           <img src="./game.jpg" alt="image" />
           <div class="text scd">
