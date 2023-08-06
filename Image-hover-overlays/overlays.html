@@ -9,6 +9,8 @@
         background: black;
         color: aqua;
         font-family: "Source Sans Pro";
+        margin: 0;
+        padding: 0;
       }
       .container {
         display: flex;
@@ -26,27 +28,39 @@
         cursor: pointer;
         aspect-ratio: 1 / 1.1;
         position: relative;
-
         border: 2px solid cyan;
+        border-radius: 5px;
       }
-      .overlay:hover .text {
-        height: 100%;
-      }
+
       .text {
         position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 0%;
-        transition: height 400ms ease-in-out;
+        transition: all 400ms ease-in-out;
         text-align: center;
         background: aqua;
-        opacity: 0.87;
+        opacity: 0.89;
         overflow: hidden;
-        color: rgb(190, 22, 78);
+        color: rgb(43, 41, 38);
+      }
+      :is(.overlays:nth-child(1) > .overlay > .text) {
+        top: 0;
+        width: 100%;
+        height: 0;
+      }
+      :is(.overlays:nth-child(2) > .overlay > .text) {
+        top: 0;
+        right: 0;
+        width: 0%;
+        height: 100%;
+      }
+      /* :is(.overlays:nth-child(3) > .overlay > .text) {} */
+      :is(.overlays:nth-child(1):hover > .overlay > .text) {
+        height: 100%;
+      }
+      :is(.overlays:nth-child(2):hover > .overlay > .text) {
+        width: 100%;
       }
       .text h1 {
-        line-height: 15rem;
+        line-height: 18rem;
       }
       .overlays img {
         width: 100%;
@@ -60,13 +74,21 @@
         <h1>Overlay 1</h1>
         <div class="overlay">
           <img src="./game.jpg" alt="image" />
-          <div class="text">
+          <div class="text fst">
             <h1>Gamers!</h1>
           </div>
         </div>
       </div>
-      <!-- <div class="overlays"></div>
-      <div class="overlays"></div> -->
+      <div class="overlays">
+        <h1>Overlay 2</h1>
+        <div class="overlay">
+          <img src="./game.jpg" alt="image" />
+          <div class="text scd">
+            <h1>Gamers!</h1>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="overlays"></div> -->
     </div>
   </body>
 </html>
