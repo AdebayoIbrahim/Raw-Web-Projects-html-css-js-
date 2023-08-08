@@ -16,11 +16,16 @@
         align-items: center;
         gap: 2rem;
       }
+      .loaders {
+        position: relative;
+      }
       /* general styling */
       :is(.container > .loaders > span) {
         width: 30px;
-        position: relative;
-        left: 10px;
+        position: absolute;
+        left: 30%;
+        top: 100%;
+        transform: translate(-50%, -50%);
         display: block;
         height: 30px;
         border-radius: 50%;
@@ -38,6 +43,10 @@
       /* ease-in */
       :is(.loaders:nth-child(2) > span) {
         animation: load 900ms ease-in infinite;
+      }
+      /* ease-out */
+      :is(.loaders:nth-child(3) > span) {
+        animation: load 900ms ease-out infinite;
       }
 
       /* animations call all */
@@ -59,6 +68,10 @@
       </div>
       <div class="loaders">
         <h3>Ease-in</h3>
+        <span></span>
+      </div>
+      <div class="loaders">
+        <h3>Ease-out</h3>
         <span></span>
       </div>
     </div>
