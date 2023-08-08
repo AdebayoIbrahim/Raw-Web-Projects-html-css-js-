@@ -101,6 +101,10 @@
       .loaders:nth-child(9) > span:before {
         animation: scale 800ms ease-out infinite;
       }
+      /* -avoid :is selector here- scalae inner ease-in*/
+      .loaders:nth-child(10) > span:before {
+        animation: scale 800ms ease-in-out infinite;
+      }
       /* animations call all */
       @keyframes load {
         from {
@@ -158,6 +162,10 @@
       </div>
       <div class="loaders">
         <h3>Scale-out</h3>
+        <span></span>
+      </div>
+      <div class="loaders">
+        <h3>Scale-both</h3>
         <span></span>
       </div>
     </div>
