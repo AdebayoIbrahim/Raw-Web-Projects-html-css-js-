@@ -17,6 +17,8 @@
         align-items: center;
         gap: var(--gap);
         flex-wrap: wrap;
+        margin-top: 7rem;
+        padding-top: 3rem;
         row-gap: calc(var(--gap) + 1rem);
       }
       .loaders {
@@ -59,6 +61,12 @@
       :is(.loaders:nth-child(5) > span) {
         animation: load 800ms linear infinite;
       }
+      /* multi-color */
+      :is(.loaders:nth-child(6) > span) {
+        animation: load 800ms linear infinite;
+        border-right: 4px solid #07c2cf;
+        border-bottom: 4px solid #a50ce2;
+      }
       /* animations call all */
       @keyframes load {
         from {
@@ -90,6 +98,10 @@
       </div>
       <div class="loaders">
         <h3>Linear</h3>
+        <span></span>
+      </div>
+      <div class="loaders">
+        <h3>multiple</h3>
         <span></span>
       </div>
     </div>
