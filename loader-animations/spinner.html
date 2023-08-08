@@ -24,9 +24,19 @@
         border: 4px solid transparent;
         border-right: 4px solid #791d2c;
         border-bottom: 4px solid #791d2c;
+        animation: load 900ms ease infinite;
       }
       h3 {
         text-align: center;
+      }
+      /* animations call */
+      @keyframes load {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
       }
     </style>
   </head>
