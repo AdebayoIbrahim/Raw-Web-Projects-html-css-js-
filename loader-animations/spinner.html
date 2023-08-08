@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Spinner</title>
     <style>
+      :root {
+        --time: 800ms;
+      }
       body {
         background: black;
         color: magenta;
@@ -45,27 +48,27 @@
 
       /* ease */
       :is(.loaders:nth-child(1) > span) {
-        animation: load 800ms ease infinite;
+        animation: load var(--time) ease infinite;
       }
       /* ease-in */
       :is(.loaders:nth-child(2) > span) {
-        animation: load 800ms ease-in infinite;
+        animation: load var(--time) ease-in infinite;
       }
       /* ease-out */
       :is(.loaders:nth-child(3) > span) {
-        animation: load 800ms ease-out infinite;
+        animation: load var(--time) ease-out infinite;
       }
       /* ease-both */
       :is(.loaders:nth-child(4) > span) {
-        animation: load 800ms ease-in-out infinite;
+        animation: load var(--time) ease-in-out infinite;
       }
       /* liner */
       :is(.loaders:nth-child(5) > span) {
-        animation: load 800ms linear infinite;
+        animation: load var(--time) linear infinite;
       }
       /* multi-color */
       :is(.loaders:nth-child(6) > span) {
-        animation: load 800ms linear infinite;
+        animation: load var(--time) linear infinite;
         border-right: 4px solid #07c2cf;
         border-bottom: 4px solid #a50ce2;
       }
@@ -91,19 +94,19 @@
         border-radius: 50%;
         left: 50%;
         transform: translate(-50%, -50%) scale(1);
-        animation: scale 800ms ease infinite;
+        animation: scale var(--time) ease infinite;
       }
       /* -avoid :is selector here- scalae inner ease-in*/
       .loaders:nth-child(8) > span:before {
-        animation: scale 800ms ease-in infinite;
+        animation: scale var(--time) ease-in infinite;
       }
       /* -avoid :is selector here- scalae inner ease-in*/
       .loaders:nth-child(9) > span:before {
-        animation: scale 800ms ease-out infinite;
+        animation: scale var(--time) ease-out infinite;
       }
       /* -avoid :is selector here- scalae inner ease-in*/
       .loaders:nth-child(10) > span:before {
-        animation: scale 800ms ease-in-out infinite;
+        animation: scale var(--time) ease-in-out infinite;
       }
       /* animations call all */
       @keyframes load {
@@ -171,3 +174,4 @@
     </div>
   </body>
 </html>
+<!-- :nth-child(n+8):not(:nth-child(n+11)) -->
