@@ -11,10 +11,13 @@
         font-family: Fira Code;
       }
       .container {
+        --gap: 2rem;
         display: flex;
         justify-content: center;
         align-items: center;
-        gap: 2rem;
+        gap: var(--gap);
+        flex-wrap: wrap;
+        row-gap: calc(var(--gap) + 1rem);
       }
       .loaders {
         position: relative;
@@ -38,17 +41,24 @@
 
       /* ease */
       :is(.loaders:nth-child(1) > span) {
-        animation: load 900ms ease infinite;
+        animation: load 800ms ease infinite;
       }
       /* ease-in */
       :is(.loaders:nth-child(2) > span) {
-        animation: load 900ms ease-in infinite;
+        animation: load 800ms ease-in infinite;
       }
       /* ease-out */
       :is(.loaders:nth-child(3) > span) {
-        animation: load 900ms ease-out infinite;
+        animation: load 800ms ease-out infinite;
       }
-
+      /* ease-both */
+      :is(.loaders:nth-child(4) > span) {
+        animation: load 800ms ease-in-out infinite;
+      }
+      /* liner */
+      :is(.loaders:nth-child(5) > span) {
+        animation: load 800ms linear infinite;
+      }
       /* animations call all */
       @keyframes load {
         from {
@@ -72,6 +82,14 @@
       </div>
       <div class="loaders">
         <h3>Ease-out</h3>
+        <span></span>
+      </div>
+      <div class="loaders">
+        <h3>Ease-both</h3>
+        <span></span>
+      </div>
+      <div class="loaders">
+        <h3>Linear</h3>
         <span></span>
       </div>
     </div>
