@@ -77,18 +77,21 @@
         margin-top: 0.8rem;
         width: calc(var(--width) + 5px);
         background: rgb(68, 219, 8);
+        border: 1px solid rgb(68, 219, 8);
+        overflow: hidden;
       }
       /* -avoid :is selector here- scalae inner*/
       .loaders:nth-child(7) > span:before {
         position: absolute;
         content: "";
-        width: 18px;
+        width: 100%;
         aspect-ratio: inherit;
-        background: #ee840c;
+        background: transparent;
         top: 50%;
         border-radius: 50%;
         left: 50%;
-        transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%) scale(1);
+        animation: scale 800ms ease infinite;
       }
 
       /* animations call all */
@@ -98,6 +101,16 @@
         }
         to {
           transform: rotate(360deg);
+        }
+      }
+      @keyframes scale {
+        from {
+          transform: translate(-50%, -50%) scale(0);
+          background: #a50598;
+        }
+        to {
+          transform: translate(-50%, -50%) scale(1);
+          background: #a50598;
         }
       }
     </style>
