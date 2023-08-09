@@ -170,6 +170,10 @@
       .loaders:nth-child(18) > span::before {
         animation: roller var(--time) ease-in infinite;
       }
+      /* rolling span -ease-out */
+      .loaders:nth-child(19) > span::before {
+        animation: roller var(--time) ease-out infinite;
+      }
       /* end spans with pseudo classes */
       /* animations call all */
       @keyframes load {
@@ -273,6 +277,10 @@
       </div>
       <div class="loaders">
         <h3>roll ease-in</h3>
+        <span></span>
+      </div>
+      <div class="loaders">
+        <h3>roll ease-out</h3>
         <span></span>
       </div>
     </div>
