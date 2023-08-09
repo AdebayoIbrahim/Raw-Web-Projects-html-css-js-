@@ -110,6 +110,12 @@
         border-inline: 4px solid #fccf09;
         animation: load var(--time) ease-out infinite;
       }
+      /* multi-bordered-spinner-ease-out */
+      :is(.loaders:nth-child(15) > span) {
+        border-block: 4px solid #b41515;
+        border-inline: 4px solid #fccf09;
+        animation: load var(--time) ease-in-out infinite;
+      }
 
       /* spans with pseudo classes */
       /* -avoid :is selector here- scalae inner ease*/
@@ -215,6 +221,10 @@
       </div>
       <div class="loaders">
         <h3>Bord ease-out</h3>
+        <span></span>
+      </div>
+      <div class="loaders">
+        <h3>Bord ease-both</h3>
         <span></span>
       </div>
     </div>
