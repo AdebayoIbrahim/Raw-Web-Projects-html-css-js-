@@ -74,7 +74,7 @@
       }
 
       /* custom scaling */
-      :is(.loaders:nth-child(n + 7) > span) {
+      :is(.loaders:nth-child(n + 7):not(:nth-child(n + 11)) > span) {
         border: none;
         left: 50%;
         margin-top: 0.8rem;
@@ -83,8 +83,14 @@
         border: 1px solid rgb(68, 219, 8);
         overflow: hidden;
       }
+      /* multi-bordered-spinner-linear */
+      :is(.loaders:nth-child(11) > span) {
+        border-block: 4px solid #07c2cf;
+        border-inline: 4px solid #fc9b09;
+        animation: load var(--time) linear infinite;
+      }
       /* -avoid :is selector here- scalae inner ease*/
-      .loaders:nth-child(n + 7) > span:before {
+      .loaders:nth-child(n + 7):not(:nth-child(n + 11)) > span:before {
         position: absolute;
         content: "";
         width: 100%;
@@ -169,6 +175,10 @@
       </div>
       <div class="loaders">
         <h3>Scale-both</h3>
+        <span></span>
+      </div>
+      <div class="loaders">
+        <h3>Bord-linear</h3>
         <span></span>
       </div>
     </div>
