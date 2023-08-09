@@ -79,7 +79,7 @@
       :is(.loaders:nth-child(n + 7):not(:nth-child(n + 11)) > span) {
         border: none;
         left: 50%;
-        margin-top: 0.8rem;
+        margin-top: 0.9rem;
         width: calc(var(--width) + 5px);
         background: rgb(68, 219, 8);
         border: 1px solid rgb(68, 219, 8);
@@ -118,7 +118,7 @@
       /* multi-bordered-spinner-ease-out */
       :is(.loaders:nth-child(n + 16) > span) {
         border: 4px solid red;
-        margin-top: 0.8rem;
+        margin-top: 0.9rem;
         left: 50%;
       }
       .loaders:nth-child(n + 16) > span::before {
@@ -135,9 +135,7 @@
         transform: translate(-50%, -50%);
         animation: roller var(--time) linear infinite;
       }
-      .loaders:nth-child(17) > span::before {
-        animation: roller var(--time) ease infinite !important;
-      }
+
       /* spans with pseudo classes */
       /* -avoid :is selector here- scalae inner ease*/
       .loaders:nth-child(n + 7):not(:nth-child(n + 11)) > span:before {
@@ -163,6 +161,14 @@
       /* -avoid :is selector here- scalae inner ease-in*/
       .loaders:nth-child(10) > span:before {
         animation: scale var(--time) ease-in-out infinite;
+      }
+      /* rolling span -ease */
+      .loaders:nth-child(17) > span::before {
+        animation: roller var(--time) ease infinite;
+      }
+      /* rolling span -ease-in */
+      .loaders:nth-child(18) > span::before {
+        animation: roller var(--time) ease-in infinite;
       }
       /* end spans with pseudo classes */
       /* animations call all */
@@ -263,6 +269,10 @@
       </div>
       <div class="loaders">
         <h3>roll-ease</h3>
+        <span></span>
+      </div>
+      <div class="loaders">
+        <h3>roll ease-in</h3>
         <span></span>
       </div>
     </div>
