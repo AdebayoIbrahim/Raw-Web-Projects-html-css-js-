@@ -11,7 +11,10 @@
       body {
         background: black;
         color: magenta;
-        font-family: Fira Code;
+        font-family: Source Sans Pro, Fira Code;
+      }
+      h3 {
+        font-size: 20px;
       }
       .container {
         --gap: 2rem;
@@ -85,9 +88,15 @@
       }
       /* multi-bordered-spinner-linear */
       :is(.loaders:nth-child(11) > span) {
-        border-block: 4px solid #07c2cf;
-        border-inline: 4px solid #fc9b09;
+        border-block: 4px solid #b41515;
+        border-inline: 4px solid #fccf09;
         animation: load var(--time) linear infinite;
+      }
+      /* multi-bordered-spinner-ease */
+      :is(.loaders:nth-child(12) > span) {
+        border-block: 4px solid #b41515;
+        border-inline: 4px solid #fccf09;
+        animation: load var(--time) ease infinite;
       }
       /* -avoid :is selector here- scalae inner ease*/
       .loaders:nth-child(n + 7):not(:nth-child(n + 11)) > span:before {
@@ -179,6 +188,10 @@
       </div>
       <div class="loaders">
         <h3>Bord-linear</h3>
+        <span></span>
+      </div>
+      <div class="loaders">
+        <h3>Bord-ease</h3>
         <span></span>
       </div>
     </div>
