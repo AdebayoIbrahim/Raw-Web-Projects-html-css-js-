@@ -167,19 +167,19 @@
       }
       /* antagonist-ease */
       :is(.loaders:nth-child(22) span:empty) {
-        animation-fill-mode: var(--ease);
+        animation-timing-function: var(--ease);
       }
       /* antagonist-ease-in */
       :is(.loaders:nth-child(23) span:empty) {
-        animation-fill-mode: var(--ease2);
+        animation-timing-function: var(--ease2);
       }
       /* antagonist-ease-out */
       :is(.loaders:nth-child(24) span:empty) {
-        animation-fill-mode: var(--ease3);
+        animation-timing-function: var(--ease3);
       }
       /* antagonist-ease-both */
       :is(.loaders:nth-child(25) span:empty) {
-        animation-fill-mode: var(--ease4);
+        animation-timing-function: var(--ease4);
       }
 
       /* spans with pseudo classes */
@@ -194,35 +194,36 @@
         border-radius: 50%;
         left: 50%;
         transform: translate(-50%, -50%) scale(1);
-        animation: scale var(--time) ease infinite;
+        animation: scale var(--time) linear infinite;
       }
       /* -avoid :is selector here- scalae inner ease-in*/
       .loaders:nth-child(8) > span:before {
-        animation: scale var(--time) ease-in infinite;
+        animation-timing-function: ease-in !important;
       }
       /* -avoid :is selector here- scalae inner ease-in*/
       .loaders:nth-child(9) > span:before {
-        animation: scale var(--time) ease-out infinite;
+        animation-timing-function: ease-out !important;
       }
       /* -avoid :is selector here- scalae inner ease-in*/
       .loaders:nth-child(10) > span:before {
-        animation: scale var(--time) ease-in-out infinite;
+        animation-timing-function: ease-in-out !important;
       }
       /* rolling span -ease */
       .loaders:nth-child(17) > span::before {
-        animation: roller var(--time) ease infinite;
+        animation-timing-function: ease !important;
       }
       /* rolling span -ease-in */
       .loaders:nth-child(18) > span::before {
-        animation: roller var(--time) ease-in infinite;
+        animation-timing-function: ease-in !important;
       }
       /* rolling span -ease-out */
       .loaders:nth-child(19) > span::before {
-        animation: roller var(--time) ease-out infinite;
+        animation-timing-function: ease-out !important;
       }
       /* rolling span -ease-out */
-      .loaders:nth-child(19) > span::before {
-        animation: roller var(--time) ease-in-out infinite;
+      .loaders:nth-child(20) > span::before {
+        /* animation: roller var(--time) ease-in-out infinite; */
+        animation-timing-function: ease-in-out !important;
       }
       /* end spans with pseudo classes */
       /* animations call all */
