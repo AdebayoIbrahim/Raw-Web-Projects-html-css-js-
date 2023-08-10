@@ -139,6 +139,10 @@
       /* antagonist loader */
       :is(.loaders:nth-child(n + 21)) {
         position: relative;
+        --ease: ease;
+        --ease-2: ease-in;
+        --ease-3: ease-out;
+        --ease-4: ease-in-out;
       }
       :is(.loaders:nth-child(n + 21) > span) {
         content: "";
@@ -156,10 +160,14 @@
         transform: translate(-50%, -50%);
         animation: roller var(--time) linear infinite;
       }
-      .loaders:nth-child(21) > span:nth-child(2) {
+      .loaders:nth-child(n + 21) > span:nth-child(2) {
         width: calc(35px - 8px);
         border-inline: 4px solid white;
         animation: antagonist var(--time) linear infinite;
+      }
+      /* antagonist-ease */
+      :is(.loaders:nth-child(22) span:empty) {
+        animation-fill-mode: var(--ease);
       }
 
       /* spans with pseudo classes */
@@ -337,6 +345,11 @@
       </div>
       <div class="loaders">
         <h3>antagonist</h3>
+        <span></span>
+        <span></span>
+      </div>
+      <div class="loaders">
+        <h3>antagonist-ease</h3>
         <span></span>
         <span></span>
       </div>
