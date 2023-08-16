@@ -1,50 +1,40 @@
-const canvasEle = document.getElementById("drawContainer");
-const context = canvasEle.getContext("2d");
-let startPosition = { x: 0, y: 0 };
-let lineCoordinates = { x: 0, y: 0 };
-let isDrawStart = false;
+const canvasContainer = document.getElementById("canvas-container");
+const image = document.getElementById("container");
+const drawCanvas = document.getElementById("drawContainer");
+const ctx = drawCanvas.getContext("2d");
 
-const getClientOffset = (event) => {
-  const { pageX, pageY } = event.touches ? event.touches[0] : event;
-  const x = pageX - canvasEle.offsetLeft;
-  const y = pageY - canvasEle.offsetTop;
+let isDrawing = false;
+let startOffsetX, startOffsetY;
 
-  return {
-    x,
-    y,
-  };
-};
+image.addEventListener("mousedown", startDrawing);
+image.addEventListener("mousemove", drawLine);
+image.addEventListener("mouseup", endDrawing);
+image.addEventListener("mouseleave", endDrawing);
 
-const drawLine = () => {
-  context.beginPath();
-  context.moveTo(startPosition.x, startPosition.y);
-  context.lineTo(lineCoordinates.x, lineCoordinates.y);
-  context.strokeStyle = "orange";
-  context.lineWidth = "4";
-  context.stroke();
-};
+function startDrawing(event) {
+  isDrawing = true;
+  const imageRect = image.getBoundingClientRect();
+  startOffsetX = event.clientX - imageRect.left;
+  startOffsetY = event.clientY - imageRect.top;
+}
 
-const mouseDownListener = (event) => {
-  startPosition = getClientOffset(event);
-  isDrawStart = true;
-};
+function drawLine(event) {
+  if (!isDrawing) return;
 
-const mouseMoveListener = (event) => {
-  if (!isDrawStart) return;
+  const imageRect = image.getBoundingClientRect();
+  const endOffsetX = event.clientX - imageRect.left;
+  const endOffsetY = event.clientY - imageRect.top;
 
-  lineCoordinates = getClientOffset(event);
-  clearCanvas();
-  drawLine();
-};
+  ctx.clearRect(0, 0, drawCanvas.width, drawCanvas.height);
+  ctx.beginPath();
+  ctx.moveTo(startOffsetX, startOffsetY);
+  ctx.lineTo(endOffsetX, endOffsetY);
+  ctx.lineWidth = 5;
+  ctx.lineCap = "round";
+  ctx.strokeStyle = "red";
+  ctx.stroke();
+}
 
-const mouseupListener = (event) => {
-  isDrawStart = false;
-};
-
-const clearCanvas = () => {
-  context.clearRect(0, 0, canvasEle.width, canvasEle.height);
-};
-
-canvasEle.addEventListener("mousedown", mouseDownListener);
-canvasEle.addEventListener("mousemove", mouseMoveListener);
-canvasEle.addEventListener("mouseup", mouseupListener);
+function endDrawing() {
+  isDrawing = false;
+}
