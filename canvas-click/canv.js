@@ -1,40 +1,37 @@
-const canvasContainer = document.getElementById("canvas-container");
-const image = document.getElementById("container");
-const drawCanvas = document.getElementById("drawContainer");
-const ctx = drawCanvas.getContext("2d");
+const container = document.getElementById("container");
+const canvas = document.getElementById("drawContainer");
+const ctx = canvas.getContext("2d");
 
 let isDrawing = false;
 let startOffsetX, startOffsetY;
 
-image.addEventListener("mousedown", startDrawing);
-image.addEventListener("mousemove", drawLine);
-image.addEventListener("mouseup", endDrawing);
-image.addEventListener("mouseleave", endDrawing);
-
-function startDrawing(event) {
+container.addEventListener("mousedown", (e) => {
   isDrawing = true;
-  const imageRect = image.getBoundingClientRect();
-  startOffsetX = event.clientX - imageRect.left;
-  startOffsetY = event.clientY - imageRect.top;
-}
+  boundRect = container.getBoundingClientRect();
 
-function drawLine(event) {
+  startOffsetX = e.clientX - boundRect.left;
+  startOffsetY = e.clientY - boundRect.top;
+});
+
+container.addEventListener("mousemove", (e) => {
   if (!isDrawing) return;
 
-  const imageRect = image.getBoundingClientRect();
-  const endOffsetX = event.clientX - imageRect.left;
-  const endOffsetY = event.clientY - imageRect.top;
+  boundRect = container.getBoundingClientRect();
+  endOffsetX = e.clientX - boundRect.left;
+  endOffsetY = e.clientY - boundRect.top;
 
-  ctx.clearRect(0, 0, drawCanvas.width, drawCanvas.height);
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
   ctx.beginPath();
   ctx.moveTo(startOffsetX, startOffsetY);
   ctx.lineTo(endOffsetX, endOffsetY);
-  ctx.lineWidth = 5;
+  ctx.lineWidth = 4;
   ctx.lineCap = "round";
-  ctx.strokeStyle = "red";
+  ctx.strokeStyle = "white";
   ctx.stroke();
-}
+});
 
-function endDrawing() {
+endLine = () => {
   isDrawing = false;
-}
+};
+container.addEventListener("mouseup", endLine);
+container.addEventListener("mousleave", endLine);

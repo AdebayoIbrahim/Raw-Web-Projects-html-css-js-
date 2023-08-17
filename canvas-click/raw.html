@@ -6,15 +6,21 @@
     <title>Canvas</title>
     <style>
       body {
-        display: flex;
-        justify-content: center;
-        min-height: 100vh;
-        align-items: center;
+        background: red;
+        font-family: Poppins;
       }
       * {
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+      }
+      .layout {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        margin-top: 20px;
+        align-items: center;
+        gap: 2em;
       }
       .container {
         position: relative;
@@ -33,13 +39,32 @@
         user-select: none;
         z-index: -2;
       }
+      button {
+        all: unset;
+        padding: 5px 20px;
+        background: #212121;
+        color: #ffffff;
+        border-radius: 5px;
+        font-family: Poppins;
+        cursor: pointer;
+      }
+      span {
+        color: white;
+      }
     </style>
   </head>
   <body>
-    <div class="container" id="container">
-      <canvas id="drawContainer" width="350px" height="300"></canvas>
-      <img src="./Binarize_temp.jpg" alt="img" />
-    </div>
+    <section class="layout">
+      <div class="container" id="container">
+        <canvas id="drawContainer" width="350px" height="300"></canvas>
+        <img src="./Binarize_temp.jpg" alt="img" />
+      </div>
+      <div class="buttons">
+        <button id="click">Click</button>
+        <button id="draw">Draw</button>
+      </div>
+      <div class="count">RidgeCount: <span>0</span></div>
+    </section>
 
     <script src="./canv.js"></script>
   </body>
