@@ -44,8 +44,9 @@ click.addEventListener("click", () => {
   container.addEventListener("mousleave", endLine);
 });
 
-const count = document.getElementById("count");
 //count functioning
+const count = document.getElementById("count");
+let curval = 0;
 draw.addEventListener("click", () => {
   if (!drawn) {
     alert("please draw the ridge line to use this function");
@@ -56,8 +57,14 @@ draw.addEventListener("click", () => {
     click.style.opacity = ".5";
 
     //counting scores
-    canvas.addEventListener("click", () => {
-      console.log("clicked now!!");
-    });
+    canvas.addEventListener(
+      "click",
+      () => {
+        console.log("clicked now!!");
+        curval++;
+        count.textContent = curval;
+      },
+      false
+    );
   }
 });
