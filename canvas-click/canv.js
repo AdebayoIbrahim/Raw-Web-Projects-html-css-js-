@@ -44,11 +44,20 @@ click.addEventListener("click", () => {
   container.addEventListener("mousleave", endLine);
 });
 
+const count = document.getElementById("count");
 //count functioning
 draw.addEventListener("click", () => {
   if (!drawn) {
     alert("please draw the ridge line to use this function");
   } else {
-    alert("Targeted!");
+    isDrawing = false;
+    let type = "disabled";
+    click.setAttribute(type, type);
+    click.style.opacity = ".5";
+
+    //counting scores
+    canvas.addEventListener("click", () => {
+      console.log("clicked now!!");
+    });
   }
 });
