@@ -68,3 +68,9 @@ draw.addEventListener("click", () => {
     );
   }
 });
+
+// clear button function
+const clear = document.querySelector("#clear");
+clear.onclick = () => {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+};
