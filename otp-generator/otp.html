@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Otp</title>
+    <style>
+      body {
+        background-color: black;
+      }
+      .cont {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+      button {
+        all: unset;
+        padding: 5px 20px;
+        background: #212121;
+        color: #ffffff;
+        border-radius: 5px;
+        font-family: Poppins;
+        cursor: pointer;
+        margin-top: 1em;
+      }
+      .display {
+        background: white;
+        color: black;
+        padding: 5px 20px;
+        border-radius: 5px;
+        text-align: center;
+        font-family: Poppins;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cont">
+      <section>
+        <div class="display">1234</div>
+        <button id="btn">Get OTP</button>
+      </section>
+    </div>
+
+    <script>
+      const btn = document.querySelector("button");
+      const output = document.querySelector(".display");
+      btn.addEventListener("click", () => {
+        let random = [];
+        let val = 4;
+        for (i = 0; i < val; i++) {
+          const gen = Math.floor(Math.random() * 10);
+          random = [...random, gen];
+        }
+        console.log(random);
+      });
+    </script>
+  </body>
+</html>
