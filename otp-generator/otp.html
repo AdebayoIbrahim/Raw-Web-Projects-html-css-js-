@@ -7,12 +7,14 @@
     <style>
       body {
         background-color: black;
+        font-family: "Lucida Console Regular";
+        color: sandybrown;
       }
       .cont {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        min-height: 100vh;
+        min-height: 50vh;
         padding-inline: 10rem;
       }
       button {
@@ -34,15 +36,29 @@
         text-align: center;
         font-family: Poppins;
       }
+      section {
+        text-align: center;
+      }
+      p {
+        margin-top: 10rem;
+        padding-inline: 1rem;
+        text-align: center;
+      }
     </style>
   </head>
   <body>
+    <p>
+      This is an simple example on the difference betweeen the "MAth.random()"
+      and "Window.crypto" function in javascript
+    </p>
     <div class="cont">
       <section>
+        <h3>Random</h3>
         <div class="display">1234</div>
         <button id="btn">Get OTP</button>
       </section>
       <section>
+        <h3>Crypto</h3>
         <div class="outcrypt">1234</div>
         <button id="crypt">Get OTP</button>
       </section>
@@ -73,7 +89,7 @@
           const actVal = Math.floor((arrcalc / Math.pow(2, 8)) * 10);
           random = [...random, actVal];
         }
-        console.log(random);
+        crypt.innerHTML = random.join("");
       });
     </script>
   </body>
