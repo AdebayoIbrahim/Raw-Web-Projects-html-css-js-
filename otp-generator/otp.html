@@ -10,9 +10,10 @@
       }
       .cont {
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
         min-height: 100vh;
+        padding-inline: 10rem;
       }
       button {
         all: unset;
@@ -24,7 +25,8 @@
         cursor: pointer;
         margin-top: 1em;
       }
-      .display {
+      .display,
+      .outcrypt {
         background: white;
         color: black;
         padding: 5px 20px;
@@ -40,10 +42,13 @@
         <div class="display">1234</div>
         <button id="btn">Get OTP</button>
       </section>
+      <section>
+        <div class="outcrypt">1234</div>
+        <button id="crypt">Get OTP</button>
+      </section>
     </div>
-
     <script>
-      const btn = document.querySelector("button");
+      const btn = document.querySelector("#btn");
       const output = document.querySelector(".display");
       btn.addEventListener("click", () => {
         let random = [];
@@ -52,8 +57,23 @@
           const gen = Math.floor(Math.random() * 10);
           random = [...random, gen];
         }
-        console.log(random);
         output.innerHTML = random.join("");
+      });
+
+      //crypto
+
+      const crypt = document.querySelector(".outcrypt");
+      const btnCrypt = document.querySelector("#crypt");
+      btnCrypt.addEventListener("click", () => {
+        let random = [];
+        let val = 4;
+        for (i = 0; i < val; i++) {
+          const arr = new Uint8Array(1);
+          const arrcalc = crypto.getRandomValues(arr)[0];
+          const actVal = Math.floor((arrcalc / Math.pow(2, 8)) * 10);
+          random = [...random, actVal];
+        }
+        console.log(random);
       });
     </script>
   </body>
