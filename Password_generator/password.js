@@ -1,5 +1,6 @@
 const ouput = document.querySelector(".output");
-const gen = document.querySelector("button");
+const gen = document.querySelector("#gen");
+const copy = document.querySelector("#copy");
 const length = document.querySelector("#len");
 const numb = document.getElementById("num");
 const upper = document.getElementById("upper");
@@ -43,3 +44,9 @@ gen.addEventListener("click", () => {
     includeSymbols
   );
 });
+
+copy.onclick = function () {
+  const clip = ouput.textContent;
+  navigator.clipboard.writeText(clip);
+  alert("Copied!");
+};
