@@ -1,6 +1,6 @@
 const ouput = document.querySelector(".output");
 const gen = document.querySelector("button");
-const length = document.querySelector("#num");
+const length = document.querySelector("#len");
 
 function getPassword(len) {
   let arr = [];
