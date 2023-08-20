@@ -20,6 +20,10 @@ function getPassword(len, incLower, incUpper, incNum, incSymb) {
   incUpper ? (allchar += uppercaseChars) : (allchar += "");
   incSymb ? (allchar += symbolChars) : (allchar += "");
   incNum ? (allchar += numberChars) : (allchar += "");
+  if (allchar.length == 0) {
+    alert("Include at least a character!");
+    return;
+  }
   let password = "";
   for (i = 0; i < len; i++) {
     const random = Math.floor(Math.random() * allchar.length);
@@ -47,6 +51,10 @@ gen.addEventListener("click", () => {
 
 copy.onclick = function () {
   const clip = ouput.textContent;
+  if (clip == "") {
+    alert("Nothing to copy!");
+    return;
+  }
   navigator.clipboard.writeText(clip);
   alert("Copied!");
 };
