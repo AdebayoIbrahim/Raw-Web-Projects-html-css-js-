@@ -36,8 +36,8 @@
     <script>
       const display = document.querySelector("#display");
 
-      //numbar we are counting to
-      var Countdown = new Date("10-07-2023 16:20:58").getTime();
+      //Date we are counting to
+      var Countdown = new Date("10-07-2024 16:20:58").getTime();
 
       //declare a variable for interval that runs every seconds
       var interval = setInterval(() => {
@@ -48,6 +48,7 @@
         // console.log(distance);
 
         //calculations --d-h-m-s
+        //there are 86 400 000ms in a day
         const day = Math.floor(distance / (1000 * 60 * 60 * 24));
         //hours
         const hour = Math.floor(
