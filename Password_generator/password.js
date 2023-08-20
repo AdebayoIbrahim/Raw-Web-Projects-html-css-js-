@@ -14,12 +14,12 @@ const uppercaseChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 const numberChars = "0123456789";
 const symbolChars = "!@#$%^&*()_-+=<>?";
 
-function getPassword(len, incLower, incUpper, incSymb, incNum) {
+function getPassword(len, incLower, incUpper, incNum, incSymb) {
   let allchar = "";
-  incLower && (allchar += lowercaseChars);
-  incUpper && (allchar += uppercaseChars);
-  incSymb && (allchar += symbolChars);
-  incNum && (allchar += numberChars);
+  incLower ? (allchar += lowercaseChars) : (allchar += "");
+  incUpper ? (allchar += uppercaseChars) : (allchar += "");
+  incSymb ? (allchar += symbolChars) : (allchar += "");
+  incNum ? (allchar += numberChars) : (allchar += "");
   let password = "";
   for (i = 0; i < len; i++) {
     const random = Math.floor(Math.random() * allchar.length);
