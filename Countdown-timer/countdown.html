@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Countdown</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial;
+      }
+      body {
+        background: black;
+      }
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+      h1 {
+        font-size: 4rem;
+        color: #09acec;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="timer">
+        <h1 id="display"></h1>
+      </div>
+    </div>
+
+    <script>
+      const display = document.querySelector("#display");
+
+      //numbar we are counting to
+      var Countdown = new Date("10-07-2023 16:20:58").getTime();
+
+      //declare a variable for interval that runs every seconds
+      var interval = setInterval(() => {
+        //getting new date
+        var date = new Date().getTime();
+        //calculate distance or inerval
+        var distance = Countdown - date;
+        // console.log(distance);
+
+        //calculations --d-h-m-s
+        const day = Math.floor(distance / (1000 * 60 * 60 * 24));
+        //hours
+        const hour = Math.floor(
+          (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        //minutes
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+        //seconds
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        //displaying values
+        display.textContent = `${day}d ${hour}h ${minutes}m ${seconds}s`;
+      }, 1000);
+    </script>
+  </body>
+</html>
