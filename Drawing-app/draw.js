@@ -34,7 +34,7 @@ canvas.addEventListener("mousemove", (e) => {
 function drawCircle(x, y) {
   let c = Math.PI;
   ctx.beginPath();
-  ctx.arc(x, y, 10, 0, 2 * c);
+  ctx.arc(x, y, size, 0, 2 * c);
   ctx.fillStyle = "blue";
   ctx.fill();
 }
@@ -43,12 +43,12 @@ function drawLine(x, y, x2, y2) {
   ctx.moveTo(x, y);
   ctx.lineTo(x2, y2);
   ctx.strokeStyle = "blue";
-  ctx.lineWidth = ctx.stroke();
+  ctx.lineWidth = `${size * 2}`;
+  ctx.stroke();
 }
 
 endDraw = () => {
   isdrawing = false;
-  startOffsetX, startOffsetY, endOffsetX, (endOffsetY = undefined);
 };
 
 canvas.addEventListener("mouseup", endDraw);
