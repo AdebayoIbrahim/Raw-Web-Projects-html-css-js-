@@ -52,3 +52,4 @@ endDraw = () => {
 };
 
 canvas.addEventListener("mouseup", endDraw);
+canvas.addEventListener("mouseleave", endDraw);
