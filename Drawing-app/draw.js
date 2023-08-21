@@ -43,4 +43,4 @@ endDraw = () => {
   startOffsetX, startOffsetY, endOffsetX, (endOffsetY = undefined);
 };
 
-document.addEventListener("mouseup", endDraw);
+canvas.addEventListener("mouseup", endDraw);
