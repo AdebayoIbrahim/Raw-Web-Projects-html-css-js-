@@ -9,8 +9,9 @@ let size = 10;
 
 slider.addEventListener("change", (e) => {
   val = e.target.value;
-  console.log(val);
   unit.innerHTML = `${val}px`;
+  size = val;
+  console.log(size);
 });
 canvas.addEventListener("mousedown", (e) => {
   isdrawing = true;
@@ -42,8 +43,7 @@ function drawLine(x, y, x2, y2) {
   ctx.moveTo(x, y);
   ctx.lineTo(x2, y2);
   ctx.strokeStyle = "blue";
-  ctx.lineWidth = 20;
-  ctx.stroke();
+  ctx.lineWidth = ctx.stroke();
 }
 
 endDraw = () => {
