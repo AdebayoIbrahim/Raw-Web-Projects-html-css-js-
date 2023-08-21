@@ -13,30 +13,52 @@
       body {
         display: flex;
         justify-content: center;
-        align-items: center;
-        flex-direction: column;
+        /* align-items: center; */
+        /* flex-direction: column; */
         min-height: 100vh;
-        gap: 0.4rem;
+        /* gap: 0.2rem; */
       }
       canvas {
         border: 2px solid grey;
+        align-self: center;
       }
       button {
         all: unset;
+        margin: 0;
         padding: 5px 20px;
         background: #212121;
         color: #ffffff;
         border-radius: 5px;
         font-family: Poppins;
         cursor: pointer;
+        /* display: block; */
+        margin-top: 4rem;
+      }
+      input[type="range"] {
+        transform: rotate(-0.25turn);
+        display: block;
+      }
+      .button-group {
+        align-self: start;
+        margin-top: 15rem;
+      }
+      #value {
+        margin-left: 2rem;
+      }
+      span {
+        font-weight: bolder;
+        font-family: poppins;
+        font-size: 1rem;
       }
     </style>
   </head>
   <body>
     <canvas width="800" height="600"></canvas>
     <div class="button-group">
-      <input type="range" name="" id="" />
-      <button>Clear</button>
+      <div id="value">
+        <input type="range" name="" id="" /><span>23px</span>
+      </div>
+      <button id="value">Clear</button>
     </div>
     <script src="./draw.js"></script>
   </body>
