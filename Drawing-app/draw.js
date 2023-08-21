@@ -2,7 +2,7 @@ const canvas = document.querySelector("canvas");
 const ctx = canvas.getContext("2d");
 const unit = document.getElementById("unit");
 const slider = document.getElementById("slider");
-
+const clear = document.querySelector(".Clear");
 let isdrawing = false;
 let startOffsetX, startOffsetY;
 let size = 10;
@@ -50,6 +50,8 @@ function drawLine(x, y, x2, y2) {
 endDraw = () => {
   isdrawing = false;
 };
-
+clear.addEventListener("click", () => {
+  isdrawing || ctx.clearRect(0, 0, canvas.width, canvas.height);
+});
 canvas.addEventListener("mouseup", endDraw);
 canvas.addEventListener("mouseleave", endDraw);
