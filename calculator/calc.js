@@ -1,12 +1,14 @@
+//decearations
 const display = document.querySelector(".result");
 const buttons = document.querySelectorAll(".button-group button");
 
+//storing current input
 let currentInput = "";
 let shouldResetDisplay = false;
 function updateDisplay(content) {
   display.textContent = content;
 }
-
+//clicking button handler
 function handleButtonClick(value) {
   if (shouldResetDisplay) {
     currentInput = "";
@@ -16,6 +18,7 @@ function handleButtonClick(value) {
   updateDisplay(currentInput);
 }
 
+//buttons function
 buttons.forEach((button) => {
   button.addEventListener("click", () => {
     const buttonText = button.textContent;
@@ -53,7 +56,7 @@ buttons.forEach((button) => {
     }
   });
 });
-
+//function constructor to evaluate
 function evaluateExpression(expression) {
   return new Function("return " + expression)();
 }
