@@ -61,4 +61,6 @@ button:active {
   background: white;
   color: black;
   transform: scale(0.87);
+  transform: translateY(1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
