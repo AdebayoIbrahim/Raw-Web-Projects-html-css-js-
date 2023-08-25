@@ -19,12 +19,28 @@ function handleButtonClick(value) {
   updateDisplay(currentInput);
 }
 
+// ... Your existing code ...
+
+// Add click event listener to the toggle sign button
+
+// ... Rest of your code ...
+
 // Add click event listener to each button
 buttons.forEach((button) => {
   button.addEventListener("click", () => {
     const buttonText = button.textContent;
-
+    // let num = display.textContent;
     switch (buttonText) {
+      case "+/-":
+        if (currentInput !== "0" && currentInput !== "Error") {
+          if (currentInput.charAt(0) === "-") {
+            currentInput = currentInput.slice(1);
+          } else {
+            currentInput = "-" + currentInput;
+          }
+          updateDisplay(currentInput);
+        }
+        break;
       case "A/C":
         currentInput = "";
         shouldResetDisplay = false;
@@ -47,6 +63,17 @@ buttons.forEach((button) => {
     }
   });
 });
+
+// toggleSignButton.addEventListener("click", () => {
+//   if (currentInput !== "0" && currentInput !== "Error") {
+//     if (currentInput.charAt(0) === "-") {
+//       currentInput = currentInput.slice(1); // Remove the minus sign
+//     } else {
+//       currentInput = "-" + currentInput; // Add the minus sign
+//     }
+//     updateDisplay(currentInput);
+//   }
+// });
 
 // Function to safely evaluate the expression
 function evaluateExpression(expression) {
