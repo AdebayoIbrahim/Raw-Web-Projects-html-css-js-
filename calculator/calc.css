@@ -28,6 +28,7 @@ body {
 }
 .button-group button {
   all: unset;
+  user-select: none;
   cursor: pointer;
   background: rgb(75, 6, 75);
   color: rgb(157, 255, 0);
@@ -46,6 +47,7 @@ body {
   box-shadow: 0 1px 2px rgb(75, 0, 60);
   color: rgb(66, 15, 22);
   font-weight: 550;
+  overflow: hidden;
 }
 button:last-of-type {
   grid-column: 3 / span 2;
