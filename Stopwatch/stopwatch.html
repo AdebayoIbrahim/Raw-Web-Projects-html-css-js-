@@ -29,7 +29,7 @@
       var CountTo = new Date("08-31-2023 16:35:59").getTime();
 
       var interval = setInterval(() => {
-        let timestamp = new Date().getTime - CountTo;
+        let timestamp = CountTo - new Date().getTime();
         console.log(timestamp);
       }, 1000);
     </script>
