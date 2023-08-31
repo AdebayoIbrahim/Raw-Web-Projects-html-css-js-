@@ -18,6 +18,10 @@
         align-items: center;
         min-height: 100vh;
       }
+      #value {
+        font-weight: 500;
+        font-size: 3rem;
+      }
     </style>
   </head>
   <body>
@@ -26,7 +30,7 @@
     </div>
     <script>
       const output = document.getElementById("value");
-      var CountTo = new Date("08-31-2023 17:50:59").getTime();
+      var CountTo = new Date("08-31-2023 18:58:59").getTime();
 
       var interval = setInterval(() => {
         let timestamp = CountTo - new Date().getTime();
