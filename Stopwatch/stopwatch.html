@@ -26,7 +26,12 @@
 
     <script>
       const output = document.getElementById("value");
-      var CountTo = new Date("10-07-2024 16:20:58").getTime();
+      var CountTo = new Date("08-31-2023 16:35:59").getTime();
+
+      var interval = setInterval(() => {
+        let timestamp = new Date().getTime - CountTo;
+        console.log(timestamp);
+      }, 1000);
     </script>
   </body>
 </html>
