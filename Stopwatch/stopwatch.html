@@ -43,6 +43,12 @@
 
         output.innerHTML = `${hour}: ${minutes}: ${seconds}`;
       }, 1000);
+      let milliseconds = 0;
+      setInterval(() => {
+        milliseconds++;
+        milliseconds > 5 && (milliseconds = 0);
+        // console.log(milliseconds);
+      }, 1000);
     </script>
   </body>
 </html>
