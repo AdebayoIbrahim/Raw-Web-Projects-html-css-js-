@@ -21,16 +21,27 @@
     </style>
   </head>
   <body>
-    <div class="container"></div>
-    <div id="value" class="output-timer"></div>
-
+    <div class="container">
+      <div id="value" class="output-timer"></div>
+    </div>
     <script>
       const output = document.getElementById("value");
-      var CountTo = new Date("08-31-2023 16:35:59").getTime();
+      var CountTo = new Date("08-31-2023 17:50:59").getTime();
 
       var interval = setInterval(() => {
         let timestamp = CountTo - new Date().getTime();
-        console.log(timestamp);
+
+        //getting remaining hours
+        const hour = Math.floor(
+          (timestamp % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        const minutes = Math.floor(
+          (timestamp % (1000 * 60 * 60)) / (1000 * 60)
+        );
+
+        const seconds = Math.floor((timestamp % (1000 * 60)) / 1000);
+
+        output.innerHTML = `${hour}: ${minutes}: ${seconds}`;
       }, 1000);
     </script>
   </body>
