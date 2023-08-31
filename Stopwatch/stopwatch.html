@@ -20,39 +20,23 @@
       }
       #value {
         font-weight: 500;
-        font-size: 3rem;
+        font-size: 2rem;
+      }
+      button {
+        margin-right: 4px;
       }
     </style>
   </head>
   <body>
     <div class="container">
       <div id="value" class="output-timer"></div>
+      <button>Start</button>
+      <button>Stop</button>
+      <button>Reset</button>
     </div>
     <script>
       const output = document.getElementById("value");
-      var CountTo = new Date("08-31-2023 18:58:59").getTime();
-
-      var interval = setInterval(() => {
-        let timestamp = CountTo - new Date().getTime();
-
-        //getting remaining hours
-        const hour = Math.floor(
-          (timestamp % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-        );
-        const minutes = Math.floor(
-          (timestamp % (1000 * 60 * 60)) / (1000 * 60)
-        );
-
-        const seconds = Math.floor((timestamp % (1000 * 60)) / 1000);
-
-        output.innerHTML = `${hour}: ${minutes}: ${seconds}`;
-      }, 1000);
-      let milliseconds = 0;
-      setInterval(() => {
-        milliseconds++;
-        milliseconds > 5 && (milliseconds = 0);
-        // console.log(milliseconds);
-      }, 1000);
+      var CountTo = new Date("08-31-2023 17:50:59").getTime();
     </script>
   </body>
 </html>
