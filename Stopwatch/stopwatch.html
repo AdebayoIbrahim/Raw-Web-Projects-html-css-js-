@@ -58,7 +58,9 @@
         const seconds = Math.floor((timestamp % (1000 * 60)) / 1000);
         const milliseconds = Math.floor((timestamp % 1000) / 10);
 
-        output.textContent = `${hour}: ${minutes}:${seconds}: ${milliseconds}`;
+        output.textContent = `${hour}: ${minutes}:${seconds
+          .toString()
+          .padStart(2, 0)}}: ${milliseconds.toString().padStart(2, 0)}`;
       }
 
       start.addEventListener("click", () => {
