@@ -43,7 +43,7 @@
       let started = false;
       const output = document.getElementById("value");
       const start = document.querySelector(".start");
-      const Stop = document.querySelector(".Stop");
+      const stop = document.querySelector(".Stop");
       const reset = document.querySelector(".reset");
 
       function Read() {
@@ -73,6 +73,11 @@
             Read();
           }, 20);
         }
+      });
+
+      stop.addEventListener("click", () => {
+        started = false;
+        clearInterval(interval);
       });
 
       stop.a;
