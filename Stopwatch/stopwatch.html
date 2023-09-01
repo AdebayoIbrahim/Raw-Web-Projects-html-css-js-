@@ -80,6 +80,12 @@
         clearInterval(interval);
       });
 
+      reset.addEventListener("click", () => {
+        started = false;
+        clearInterval(interval);
+        output.textContent = "00:00:00.00";
+      });
+
       stop.a;
     </script>
   </body>
