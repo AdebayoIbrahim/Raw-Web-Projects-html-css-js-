@@ -31,7 +31,7 @@
   </head>
   <body>
     <div class="container">
-      <div id="value" class="output-timer">0:00:0</div>
+      <div id="value" class="output-timer">00:00:00.00</div>
       <div class="buttons">
         <button class="start">Start</button>
         <button class="Stop">Stop</button>
@@ -60,7 +60,7 @@
 
         output.textContent = `${hour}: ${minutes}:${seconds
           .toString()
-          .padStart(2, 0)}}: ${milliseconds.toString().padStart(2, 0)}`;
+          .padStart(2, 0)}: ${milliseconds.toString().padStart(2, 0)}`;
       }
 
       start.addEventListener("click", () => {
@@ -72,6 +72,8 @@
           }, 20);
         }
       });
+
+      stop.a;
     </script>
   </body>
 </html>
