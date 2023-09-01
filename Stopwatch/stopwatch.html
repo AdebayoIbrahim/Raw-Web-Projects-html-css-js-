@@ -41,6 +41,15 @@
     <script>
       let startTime, interval;
       const output = document.getElementById("value");
+
+      function Read() {
+        const CountTo = new Date().getTime();
+        timestamp = CountTo - startTime;
+        const hour = Math.floor(
+          (timestamp % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        const minutes = Math.floor();
+      }
     </script>
   </body>
 </html>
