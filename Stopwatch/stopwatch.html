@@ -56,7 +56,7 @@
           (timestamp % (1000 * 60 * 60)) / (1000 * 60)
         );
         const seconds = Math.floor((timestamp % (1000 * 60)) / 1000);
-        const milliseconds = Math.floor((timestamp % 1000) / 100);
+        const milliseconds = Math.floor((timestamp % 1000) / 10);
 
         output.textContent = `${hour}: ${minutes}:${seconds}: ${milliseconds}`;
       }
@@ -67,7 +67,7 @@
           startTime = new Date().getTime();
           interval = setInterval(() => {
             Read();
-          }, 100);
+          }, 20);
         }
       });
     </script>
