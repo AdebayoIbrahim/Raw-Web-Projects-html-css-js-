@@ -33,14 +33,15 @@
     <div class="container">
       <div id="value" class="output-timer">0:00:0</div>
       <div class="buttons">
-        <button>Start</button>
-        <button>Stop</button>
-        <button>Reset</button>
+        <button class="start">Start</button>
+        <button class="Stop">Stop</button>
+        <button class="reset">Reset</button>
       </div>
     </div>
     <script>
       let startTime, interval;
       const output = document.getElementById("value");
+      const start = document.querySelector(".start");
 
       function Read() {
         const CountTo = new Date().getTime();
