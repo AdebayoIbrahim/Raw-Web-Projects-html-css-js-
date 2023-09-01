@@ -40,11 +40,15 @@
     </div>
     <script>
       let startTime, interval;
+      let started = false;
       const output = document.getElementById("value");
       const start = document.querySelector(".start");
+      const Stop = document.querySelector(".Stop");
+      const reset = document.querySelector(".reset");
 
       function Read() {
         const CountTo = new Date().getTime();
+        console.log("clicked");
         timestamp = CountTo - startTime;
         const hour = Math.floor(
           (timestamp % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
@@ -55,8 +59,18 @@
         const seconds = Math.floor((timestamp % (1000 * 60)) / 1000);
         const milliseconds = Math.floor((timestamp % 1000) / 100);
 
-        value.innerHtml = `${hour}: ${minutes}:${seconds}: ${milliseconds}`;
+        output.textContent = `${hour}: ${minutes}:${seconds}: ${milliseconds}`;
       }
+
+      start.addEventListener("click", () => {
+        if (!started) {
+          started = true;
+          startTime = new Date().getTime();
+          interval = setInterval(() => {
+            Read();
+          }, 1000);
+        }
+      });
     </script>
   </body>
 </html>
