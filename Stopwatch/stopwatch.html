@@ -30,7 +30,7 @@
       }
       .sm {
         font-size: 1.5rem;
-        margin-left: -4px;
+        margin-left: -3px;
       }
     </style>
   </head>
@@ -55,6 +55,7 @@
       const stop = document.querySelector(".Stop");
       const reset = document.querySelector(".reset");
       const span = document.querySelector(".sm");
+
       function Read() {
         const CountTo = new Date().getTime();
         timestamp = CountTo - startTime;
@@ -67,12 +68,13 @@
         const seconds = Math.floor((timestamp % (1000 * 60)) / 1000);
         const milliseconds = Math.floor((timestamp % 1000) / 10);
         var ms = `${milliseconds.toString().padStart(2, 0)}`;
-        span.textContent = ms;
+
         output.textContent = `${hour.toString().padStart(2, 0)}:${minutes
           .toString()
-          .padStart(2, 0)}:${seconds.toString().padStart(2, 0)}.${
-          span.textContent
-        }`;
+          .padStart(2, 0)}:${seconds.toString().padStart(2, 0)}.
+        `;
+        span.style.marginLeft = "-8px";
+        span.textContent = `${ms}`;
       }
 
       start.addEventListener("click", () => {
