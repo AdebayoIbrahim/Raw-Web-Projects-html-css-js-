@@ -27,11 +27,14 @@
       button {
         margin-right: 4px;
       }
+      #value span {
+        font-size: 1.5rem;
+      }
     </style>
   </head>
   <body>
     <div class="container">
-      <div id="value" class="output-timer">00:00:00.00</div>
+      <div id="value" class="output-timer">00:00:00.<span>00</span></div>
       <div class="buttons">
         <button class="start">Start</button>
         <button class="Stop">Stop</button>
@@ -85,8 +88,6 @@
         clearInterval(interval);
         output.textContent = "00:00:00.00";
       });
-
-      stop.a;
     </script>
   </body>
 </html>
