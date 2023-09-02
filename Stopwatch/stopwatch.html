@@ -23,18 +23,24 @@
       #value {
         font-weight: 500;
         font-size: 2rem;
+        display: inline;
       }
       button {
         margin-right: 4px;
       }
-      #value span {
+      .sm {
         font-size: 1.5rem;
+        margin-left: -4px;
       }
     </style>
   </head>
   <body>
     <div class="container">
-      <div id="value" class="output-timer">00:00:00.<span>00</span></div>
+      <div>
+        <div id="value" class="output-timer">00:00:00.</div>
+        <span class="sm">00</span>
+      </div>
+
       <div class="buttons">
         <button class="start">Start</button>
         <button class="Stop">Stop</button>
@@ -48,7 +54,7 @@
       const start = document.querySelector(".start");
       const stop = document.querySelector(".Stop");
       const reset = document.querySelector(".reset");
-
+      const span = document.querySelector(".sm");
       function Read() {
         const CountTo = new Date().getTime();
         timestamp = CountTo - startTime;
@@ -60,12 +66,13 @@
         );
         const seconds = Math.floor((timestamp % (1000 * 60)) / 1000);
         const milliseconds = Math.floor((timestamp % 1000) / 10);
-        var pad = `${toString().padStart(2, 0)}`;
+        var ms = `${milliseconds.toString().padStart(2, 0)}`;
+        span.textContent = ms;
         output.textContent = `${hour.toString().padStart(2, 0)}:${minutes
           .toString()
-          .padStart(2, 0)}:${seconds.toString().padStart(2, 0)}.${milliseconds
-          .toString()
-          .padStart(2, 0)}`;
+          .padStart(2, 0)}:${seconds.toString().padStart(2, 0)}.${
+          span.textContent
+        }`;
       }
 
       start.addEventListener("click", () => {
