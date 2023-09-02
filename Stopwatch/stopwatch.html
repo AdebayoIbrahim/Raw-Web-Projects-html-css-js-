@@ -22,23 +22,30 @@
       }
       #value {
         font-weight: 500;
-        font-size: 2rem;
+        font-size: 3rem;
         display: inline;
       }
-      button {
-        margin-right: 4px;
-      }
+
       .sm {
         font-size: 1.5rem;
-        margin-left: -3px;
+        margin-left: -1px;
       }
       .tip {
         margin-top: 5px;
-        margin-left: 15px;
+        margin-left: 18px;
         display: flex;
-        /* text-align: center; */
-        /* justify-content: center; */
-        gap: 1.3rem;
+        gap: 1.8rem;
+        font-size: 1.5rem;
+      }
+      button {
+        all: unset;
+        padding: 5px 12px;
+        background: #212121;
+        color: #ffffff;
+        border-radius: 5px;
+        font-family: Poppins;
+        cursor: pointer;
+        margin-right: 5px;
       }
     </style>
   </head>
@@ -86,7 +93,7 @@
           .toString()
           .padStart(2, 0)}:${seconds.toString().padStart(2, 0)}.
         `;
-        span.style.marginLeft = "-8px";
+        span.style.marginLeft = "-10px";
         span.textContent = `${ms}`;
       }
 
