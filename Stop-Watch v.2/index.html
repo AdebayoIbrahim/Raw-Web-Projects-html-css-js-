@@ -4,52 +4,54 @@
     <title>Manual Stopwatch</title>
     <style>
       body {
-        margin:0;
-        padding:0;
+        margin: 0;
+        padding: 0;
         background: #212121;
       }
       .container {
         display: flex;
         justify-content: center;
         align-items: center;
+        flex-direction: column;
+        gap: 1rem;
         min-height: 100vh;
       }
       input {
         all: unset;
         border: none;
-        width:50%;
+        width: 50%;
         border-bottom: 2px solid gray;
         padding: 3px;
         color: cyan;
-        font-size:20px;
+        font-size: 20px;
       }
       .output > span {
-         front-weight: bold;
+        font-weight: bold;
         font-size: 25px;
         user-select: none;
         color: orange;
       }
       .input-area {
-         display: flex;
+        display: flex;
         gap: 2px;
         justify-content: center;
       }
     </style>
   </head>
   <body>
-    <div class= "container">
-      <div class = "input-area">
-        <input type = "number">
-        <input type = "number">
-        <input type = "number">
+    <div class="container">
+      <div class="input-area">
+        <input type="number" />
+        <input type="number" />
+        <input type="number" />
       </div>
-      <div class = "output">
+      <div class="output">
         <span>00h:00s:00m</span>
       </div>
     </div>
 
     <script>
-      const input = document.querySelector("input")
+      const input = document.querySelector("input");
     </script>
   </body>
 </html>
