@@ -19,6 +19,7 @@
       input {
         all: unset;
         border: none;
+display: none;
         width: 50%;
         border-bottom: 2px solid gray;
         padding: 3px;
@@ -28,6 +29,10 @@
 
       input:after {
         position: absollute;
+        content '';
+        bottom:0;
+         width: 20px;
+height: 5px;
       }
       .output > span {
         font-weight: bold;
