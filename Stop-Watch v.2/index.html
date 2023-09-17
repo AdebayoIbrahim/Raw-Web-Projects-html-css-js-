@@ -7,6 +7,7 @@
         margin: 0;
         padding: 0;
         background: #212121;
+        font-family: Nunito;
       }
       .container {
         display: flex;
@@ -18,25 +19,15 @@
       }
       input {
         all: unset;
-        border: none;
-display: none;
-        width: 50%;
-        border-bottom: 2px solid gray;
+        width: 70px;
         padding: 3px;
-        color: cyan;
+        border-bottom: 2px solid cyan;
         font-size: 20px;
+        position: relative;
+        color: khaki;
+        text-align: center;
       }
 
-      input:after {
-        position: absollute;
-        content '';
-        bottom:0;
-         width: 20px;
-height: 5px;
-      }
-. output {
- margin-top: 20px;
-}
       .output > span {
         font-weight: bold;
         font-size: 25px;
@@ -53,9 +44,9 @@ height: 5px;
   <body>
     <div class="container">
       <div class="input-area">
-        <input type="number" />
-        <input type="number" />
-        <input type="number" />
+        <input type="text" />
+        <input type="text" />
+        <input type="text" />
       </div>
       <div class="output">
         <span>00h:00s:00m</span>
